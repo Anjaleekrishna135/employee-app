@@ -5,17 +5,18 @@ import SearchEmployee from './components/SearchEmployee';
 import DeleteEmployee from './components/DeleteEmployee';
 import ViewAll from './components/ViewAll';
 import NavBar from './components/NavBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <AddEmployee />
-      <SearchEmployee />
-      <DeleteEmployee />
-      <ViewAll />
-      <NavBar />
-
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<AddEmployee/>}/>
+      <Route path='/search' element={<SearchEmployee/>}/>
+      <Route path='/delete' element={<DeleteEmployee/>}/>
+      <Route path='/view' element={<ViewAll/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
